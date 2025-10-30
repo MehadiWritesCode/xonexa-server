@@ -7,7 +7,24 @@ const app = express();
 import cors from 'cors'
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
-app.use(cors());
+// app.use(cors());
+
+const allowedOrigins = [
+    'https://xonexa-server.onrender.com',
+    'https://xonexa-client.vercel.app',  
+    'http://localhost:5173',                    
+];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true 
+}));
 
 
 app.use(express.urlencoded({extended:true}))
