@@ -3,9 +3,10 @@ import pool from "../config/postgreSQL.js";
 export const setCartItemController = async (req, res) => {
   const { user_id, product, selectedSize, stock } = req.body;
   const { id: product_id, images, price, name, discount } = product; // discount req.body theke
-
+  
   const discountedPrice = price * (1 - discount / 100);
-
+   
+  console.log(typeof user_id);
   try {
     //set size
     const sizeValue =

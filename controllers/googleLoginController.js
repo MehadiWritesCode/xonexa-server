@@ -12,7 +12,7 @@ export const googleLoginController = async(req,res)=>{
       const token = jwt.sign(
         { id: rows[0].user_id, email: rows[0].email },
         process.env.JWT_SECRET || "mySecretKey",
-        { expiresIn: "7d" } // 7 days token valid
+        { expiresIn: "7d" } // 7 days token valida
       );
 
             return res.status(201).json({message: "Login Succesfull",token, role: rows[0].role});

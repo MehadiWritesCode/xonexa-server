@@ -8,7 +8,6 @@ export const signupController = async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // PostgreSQL uses $1, $2, $3 instead of ?
         const { rows: existingUser } = await pool.query(
             `SELECT email FROM users WHERE email = $1`,
             [email]
@@ -18,15 +17,15 @@ export const signupController = async (req, res) => {
             return res.status(400).json({ message: "User already exists" });
         }
 
-        const { rows } = await pool.query(
+       const{rows} = await pool.query(
             `INSERT INTO users (full_name, email, password_hash,role) VALUES ($1, $2, $3,$4) RETURNING user_id`,
             [name, email, hashedPassword,"0"]
         );
-
-        const userId = rows[0].id;
+        console.log("✅ Insert result:", rows);
+       const user_id = rows[0].user_id;
 
         const token = jwt.sign(
-            { id: userId, email, role: 0 },
+            { id: user_id, email, role: 0 },
             process.env.JWT_SECRET || "mySecretKey",
             { expiresIn: "7d" }
         );
