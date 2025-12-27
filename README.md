@@ -1,10 +1,13 @@
-Visit client repo ->   https://github.com/MehadiWirtesCode/xonexa-client
 # 🛍️ Xonexa - Modern Hybrid E-commerce Platform
 
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://xonexa-client.vercel.app/)
 [![Database](https://img.shields.io/badge/Database-PostgreSQL%20&%20MongoDB-blue.svg)](https://supabase.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+### 📑 Project Documentation
+Detailed technical analysis and system design are available in the full report.
+
+[👉 View Full Project Report (PDF)](./Xonexa_Report.pdf)
 **Xonexa** is a robust full-stack e-commerce solution featuring a **Hybrid Data Architecture**. It utilizes MongoDB for flexible product catalogs and PostgreSQL (via Supabase) for mission-critical transactional data like user profiles, orders, and shopping carts.
 
 ---
@@ -215,11 +218,14 @@ The system architecture is designed for scalability and performance.
 
 ```txt
 • Full Project Report (PDF)
-  - Add your PDF link here
+  - https://github.com/MehadiWritesCode/xonexa-client/blob/main/Xonexa_Report.pdf
 ```
 
 ---
+---
 
+## 📄 License
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for more details.
 # ❤️ Credits
 
 ```txt
